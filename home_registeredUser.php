@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Drive Way Car Rentals</title>
+    <script src="https://kit.fontawesome.com/cd17775da3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles\style.css">
     <link rel="icon" href="Assets\Images\Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="Styles/navbar.css">
@@ -12,30 +13,91 @@
     <!-- Navigation bar  -->
     <nav>
       <div class="logo">
-        <a href="index.php">
+        <a href="home_registeredUser.php">
           <img src="Assets/Images/Logo.png" alt="Logo" width="100px" height="100px">
         </a>
       </div>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="menu">
-        <li><a class="active" href="index.php">Home</a></li>
-        <li><a href="reserve_page\main.php">Cars</a></li>
+        <li><a class="active" href="home_registeredUser.php">Home</a></li>
+        <li><a href="reserve_page/main.php">Cars</a></li>
         <li><a href="feedback.php">Feedback</a></li>
-        <li><a href="contact.php">Contact Us</a></li> 
-        
+        <li><a href="contact.php">Contact Us</a></li>
       </ul>
-      <button id="login_btn" onclick="location.href='login.php';" >Login</button>
+      <i onclick="location.href='Customer_profile.php';" class="fa-solid fa-user acount_icon"></i>
     </nav>
 
     <!-- First part of the home page  -->
     <div class="container1">
       <h1>Drive Way Car Rentals</h1>
       <p>Rent a car anywhere <br> Sri Lanka...</p>
-      <button>. Reserve Now >> .</button>
+      <button onclick="location='reserve_page/main.php'">. Reserve Now >> .</button>
     </div>
     
   </div>
+
+  <!-- Second part of the home page -->
+  <div class="background2">
+    <div class="headingSentence">
+    <h2>Reserve a car in 1 minute..</h2>
+    </div>
+    <form class="set_details_form" action="process_reservation.php" method="post">
+      <fieldset class="set_details">
+          <legend><b>. Quick car Resevation .</b></legend>
+            <div class="form_contents">
+              <div class="pickup_details">
+                  <label for="set_pick_up_location">Pick-up Location</label>
+                  <input type="text" id="set_pick_up_location" name="set_pick_up_location" value=""><br>
+                  <label for="set_pickup_date">Pick-up Date</label>
+                  <input type="date" id="set_pickup_date" name="set_pickup_date">
+                  <label for="set_pickup_time">Pick-up Time</label>
+                  <input type="time" id="set_pickup_time" name="set_pickup_time"><br>
+              </div>
+              <div class="drop_details">
+                  <label for="set_drop_location">Drop-off Location</label>
+                  <input type="text" id="set_drop_location" name="set_drop_location" value=""><br>
+                  <label for="set_drop_date">Drop-off Date</label>
+                  <input type="date" id="set_drop_date" name="set_drop_date">
+                  <label for="set_drop_time">Drop Time</label>
+                  <input type="time" id="set_drop_time" name="set_drop_time"><br>
+              </div>
+              <div class="search_button">
+                  <select name="quick_car_select" id="quick_car_select">
+                      <option value="0">Select Car</option>
+                  </select>
+                  <button type="submit" name="search_button">Reserve Now</button>
+              </div>
+            </div>
+      </fieldset>
+    </form>
+  </div>
+
+
+  
+  <script>
+  <?php
+              // Include the config.php file for database connection
+              include("config.php");
+
+              // Fetch the available cars from the Car table where Availability is 'yes'
+              $sql = "SELECT Car_ID, Brand, model FROM Car WHERE Availability = 'yes'";
+              $result = $con->query($sql);
+
+              // Check if there are any available cars
+              if ($result->num_rows > 0) {
+                  // Loop through each row and generate the options for the select dropdown
+                  while ($row = $result->fetch_assoc()) {
+                      $carID = $row['Car_ID'];
+                      $brand = $row['Brand'];
+                      $model = $row['model'];
+                      echo "document.getElementById('quick_car_select').innerHTML += '<option value=\"$carID\">$brand $model</option>';\n";
+                  }
+              } else {
+                  echo "document.getElementById('quick_car_select').innerHTML = '<option value=\"0\">No cars available</option>';\n";
+              }
+          ?>
+  </script>
 
 
 
@@ -111,6 +173,7 @@
       </div>
     </div>
   </div>
+
 
 
   <footer>
