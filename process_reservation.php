@@ -54,4 +54,9 @@ if (isset($_POST['search_button'])) {
 }
 ?>
 
-<script src="JS/process_reservation.js"></script>  
+<script>
+  var make_payment_button = document.getElementById('make_payment_button');
+  make_payment_button.addEventListener('click', function(){
+      window.open('payment.php');
+  });
+</script>  
