@@ -154,65 +154,115 @@
     margin-right: 8.33%;
     padding-top: 2%;
     font-size: 1.5vw;
+    margin-bottom: 50vh;
 }
 
 
 /* background4 */
 
-.background4{
-    background-color: rgb(15, 14, 10);
-    width: 100%;
-    margin-top: 45vh;
-
+.categoriesScrollListSection{
+  width: 100%;
+  background-color: rgb(15, 14, 10);
+  width: 100%;
+  color: #ffffff;
+  padding-top: 5vh;
+  padding-bottom: 10vh; 
+}
+  
+.allContentsOfCategoriesList{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  width: 83.33%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.container_bg4{
-    padding-top: 35vh;
-    color: #ffffff;
-    padding-bottom: 15vh;
-    margin-left: 8.33%;
-    margin-right: 8.33%;
+.car_categories{
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
 }
 
-.car_categories {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%; 
-    margin: 0 auto; 
+.threeCategories{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+  flex: none;
+  width: 900px;
 }
 
-.scroll_list {
-    display: flex;
-    gap: 300px;
-    padding: 0 10px;
+.category{
+  width: 100%;
+}
+
+.category img{
+  width: 100%;
+  height: 200px;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+#backBtn{
+  rotate: 180deg;
+  margin-right: 5vw;
+}
+
+#nextBtn{
+  margin-left: 5vw;
 }
 
 
-.category img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
+#backBtn,
+#nextBtn{
+  font-size: 3.5vw;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #000000;
+color: #ffffff;
+}
 
-.category h2 {
-    margin-top: 10px;
+#backBtn:hover,
+#nextBtn:hover{
+  background-color: #fff5f5;
+color: #000000;
+  transition: 0.8s;
+}
+
+.category img:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.car_categories::-webkit-scrollbar{
+  display: none;
+}
+
+.category h2{
+  text-align: center;
 }
 
 .viewall_button{
-  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: 10%;
 }
 
 .viewall_button button{
-  font-size: 2vw;
-  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+	border: 3px solid #000000;
+	font-size: 1.8vw;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  border-radius: 10px;
+  cursor: pointer;
+  width: auto;
+
 }
 
 .viewall_button button:hover{
@@ -220,114 +270,6 @@
 	color: #ffffff;
   transition: 0.8s;
 }
-
-@media screen and (max-width: 768px) {
-    .scroll_list {
-      gap: 20px;
-    }
-    
-    
-    .category img {
-      width: 150px;
-      height: 100px;
-    }
-    
-    .category h2 {
-      font-size: 16px;
-    }
-    
-  }
-
-
-
-/* background4 */
-/*
-.background4 {
-    padding: 50px 0;
-    position: relative; 
-  }
-  
-  .car_categories {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%; 
-    margin: 0 auto; 
-  }
-  
-  .scroll_list {
-    display: flex;
-    gap: 30px;
-    padding: 0 10px; 
-  }
-  
-  .category {
-    flex: 0 0 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .category img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .category h2 {
-    margin-top: 10px;
-  }
-  
-  .navigation {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px; 
-  }
-  
-  .prev-btn,
-  .next-btn {
-    padding: 10px;
-    font-size: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .prev-btn {
-    margin-right: 10px;
-  }
-  
-  .prev-btn:focus,
-  .next-btn:focus,
-  .prev-btn:active,
-  .next-btn:active {
-    outline: none;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .scroll_list {
-      gap: 20px;
-    }
-    
-    .category {
-      flex: 0 0 200px;
-    }
-    
-    .category img {
-      width: 150px;
-      height: 100px;
-    }
-    
-    .category h2 {
-      font-size: 16px;
-    }
-    
-    .navigation {
-      right: 5px; 
-    }
-  }
-  */
 
 
   /* background5 */

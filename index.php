@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Drive Way Car Rentals</title>
+    <script src="https://kit.fontawesome.com/cd17775da3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles\style.css">
     <link rel="icon" href="Assets\Images\Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="Styles/navbar.css">
@@ -56,29 +57,60 @@
   </div>
 
   <!-- Fourth part of the home page -->
-  <div class="background4">
-    <div class="container_bg4">
-      <div class="car_categories">
-        <div class="scroll_list">
-          <div onclick="location='reserve_page/compact.php'" class="category">
-            <img src="Assets\Images\hatchback.png" alt="">
-            <h2>Compact</h2>
+  <section class="categoriesScrollListSection">
+    <div class="allContentsOfCategoriesList">
+          <i class="fa-sharp fa-solid fa-square-caret-right" id="backBtn"></i>
+          <div class="car_categories">
+          <div class="threeCategories">
+              <div class="category">
+                <img src="Assets\Images\hatchback.png" alt="Hatchback">
+                <h2>Hatchback</h2>
+              </div>
+              <div class="category">
+                <img src="Assets\Images\suv.png" alt="SUV">
+                <h2>SUV</h2>
+              </div>
+              <div class="category">
+                <img src="Assets/Images/sports.jpg" alt="Sports">
+                <h2>Sports</h2>  
+              </div>
+            </div>
+            <div class="threeCategories">
+              <div class="category">
+                <img src="Assets\Images\electric.jpg" alt="Electric">
+                <h2>Electric</h2>
+              </div>
+              <div class="category">
+                <img src="Assets\Images\sedan.jpg" alt="Sedan">
+                <h2>Sedan</h2>
+              </div>
+              <div class="category">
+                <img src="Assets/Images/offroad.jpeg" alt="Off-Road">
+                <h2>Off-Road</h2>  
+              </div>
+            </div>
+            <div class="threeCategories">
+                <div class="category">
+                  <img src="Assets\Images\convertiable.jpg" alt="Convertible">
+                  <h2>Convertible</h2>
+                </div>
+                <div class="category">
+                  <img src="Assets\Images\minivan.png" alt="Minivan">
+                  <h2>Minivan</h2>
+                </div>
+                <div class="category">
+                  <img src="Assets/Images/luxury.jpg" alt="Luxury">
+                  <h2>Luxury</h2>  
+                </div>
+            </div>
           </div>
-          <div onclick="location='reserve_page/SUV.php'" class="category">
-            <img src="Assets\Images\suv.png" alt="">
-            <h2>SUV</h2>
-          </div>
-          <div onclick="location='reserve_page/luxery.php'" class="category">
-            <img src="Assets/Images/sedan.jpg" alt="">
-            <h2>Luxury</h2>  
-          </div>
-        </div>
-        <div class="viewall_button">
-          <button onclick="location='reserve_page/main.php'">view all</button>
-        </div>
-      </div>
+          <i class="fa-sharp fa-solid fa-square-caret-right" id="nextBtn"></i>
     </div>
-  </div>
+    <div class="viewall_button">
+      <button onclick="location='reserve_page/main.php'">view all</button>
+    </div>
+  </section>
+  <script src="JS\cars.js"></script>
 
   <!-- Fifth part of the home page -->
   <div class="background5">
