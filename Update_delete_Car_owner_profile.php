@@ -26,7 +26,7 @@ if(isset ($_POST['Button'])){
     WHERE ID='$new_ID'";
 
     if($conn->query($sql2)){
-        header("Location:webhtmlfile.php?updated");/ Redirect to the specified page after successful update
+        header("Location:webhtmlfile.php?updated");// Redirect to the specified page after successful update
         echo "Update successfully";
     }else{
         echo "Failed!try again";
